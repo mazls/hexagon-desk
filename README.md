@@ -14,3 +14,6 @@ https://www.az-delivery.de/en/products/esp32-developmentboard
 The programm is yet not finished. 
 
 I uploaded the demo program i used to check the feasibility, i soldered the leds and the touch sensors directly to the esp32.
+
+
+https://youtu.be/I4rWym8PK4s
