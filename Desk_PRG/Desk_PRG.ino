@@ -6,23 +6,29 @@
 //
 // Description: Programm for ESP32DevKitC; reads inputs from MCP23017 puts in array
 //              4 LED channels to one array; Inputs TTP223 touch sensors
-//              Hexagonal led pcbs, with 6 WS2812B leds and pins for TTP223 Sensors
+//              61 Hexagonal led pcbs, with 6 WS2812B leds and pins for TTP223 Sensors
 //              AsyncElegantOTA for Updates to PCB
 //   
 //
 // History:     May-14-2022     mazls      Created
+//              May-18-2022     mazls      WifiHostname; Debounce; 
 //
 //---------------------------------------------------------------------------
 
 #include "FastLED.h"
 #include <Wire.h>
 #include "Adafruit_MCP23017.h"  //V1.2.0
+//#include "Hexagon.h"
 
 #include <Arduino.h>
 #include <WiFi.h>
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 #include <AsyncElegantOTA.h>
+
+#include "soc/soc.h"
+#include "soc/rtc_cntl_reg.h"
+
 
 #define LED_ch0             0     //LED PINS: 0;2;4;5
 #define LED_ch1             2     //LED PINS: 0;2;4;5
@@ -40,14 +46,36 @@
 #define NUMPIXELS_ch3       Hexagons_channel_3*PixelPerHexagon
 #define NUMPIXELS           NUMPIXELS_ch0+NUMPIXELS_ch1+NUMPIXELS_ch2+NUMPIXELS_ch3   //Total pixel count
 #define VOLTS               5
-#define MILLIAMPS           6000
+#define MILLIAMPS           2000
+
+const byte fadeAmt = 64;
+
+/*
+#define NUM_COLORS 8
+static const CRGB FieldColors [NUM_COLORS] = 
+{
+    CRGB::Red,
+    CRGB::Blue,
+    CRGB::Purple,
+    CRGB::Green,
+    CRGB::Yellow,
+    CRGB::White,
+    CRGB::Orange,
+    CRGB::Indigo,
+};
+
+*/
 
 
-const char* ssid = "****";
+String hostname = "Hexagon LED Table";
+
+const char* ssid = "*****";
 const char* password = "****";
 
 AsyncWebServer server(80);
+/*
 
+*/
 Adafruit_MCP23017 mcp1;
 Adafruit_MCP23017 mcp2;
 Adafruit_MCP23017 mcp3;
@@ -64,12 +92,31 @@ int touch_ch0[Hexagons_channel_0];
 int touch_ch1[Hexagons_channel_1];
 int touch_ch2[Hexagons_channel_2];
 int touch_ch3[Hexagons_channel_3];
-int touch[Hexagons];
+boolean touch[Hexagons] = {LOW};
+
+//boolean TouchBtn [Hexagons] = {LOW};
+boolean TouchBtnPState [Hexagons] = {LOW};
+unsigned long lastDebounceTime [Hexagons] = {0};    
+unsigned long debounceDelay = 200;    
+
+unsigned long lastOffTime [Hexagons] = {0};    
+unsigned long OffDelay = 100; 
+ 
+int count [Hexagons] = {0};     
+//unsigned long previousMillis = 0; 
+//const long interval = 50; 
 
 void setup()
 {
+
+
+
+  WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable   detector
   Serial.begin(9600);
+  
   WiFi.mode(WIFI_STA);
+  WiFi.config(INADDR_NONE, INADDR_NONE, INADDR_NONE, INADDR_NONE);
+  WiFi.setHostname(hostname.c_str()); //define hostname
   WiFi.begin(ssid, password);
   Serial.println("");
 
@@ -91,9 +138,8 @@ void setup()
   AsyncElegantOTA.begin(&server);    // Start ElegantOTA
   server.begin();
   Serial.println("HTTP server started");
-
-
-    
+  /*
+*/
     //Setting up one array with many strips
     FastLED.addLeds<NEOPIXEL, LED_ch0>(leds, NUMPIXELS_ch0);                                //Start with index 0
     FastLED.addLeds<NEOPIXEL, LED_ch1>(leds, NUMPIXELS_ch0, NUMPIXELS_ch1);                 //change index to number of pixels on ch0
@@ -101,7 +147,7 @@ void setup()
     FastLED.addLeds<NEOPIXEL, LED_ch3>(leds, NUMPIXELS_ch0+NUMPIXELS_ch1+NUMPIXELS_ch2, NUMPIXELS_ch3);
     FastLED.setMaxPowerInVoltsAndMilliamps(VOLTS,MILLIAMPS);  //Current protetction
     FastLED.setBrightness(255); //max brightness
-
+      
       //set adress for mcp
       mcp1.begin(mcp1_addr);
       mcp2.begin(mcp2_addr);
@@ -110,89 +156,71 @@ void setup()
       
       //all mcp pins as inputs
      for (int in=0; in<=15; in++){
-      mcp1.pinMode(in, INPUT); 
-      mcp2.pinMode(in, INPUT); 
-      mcp3.pinMode(in, INPUT); 
+      mcp1.pinMode(in, INPUT);
+      mcp1.pullUp(in, HIGH); 
+      mcp2.pinMode(in, INPUT);
+      mcp2.pullUp(in, HIGH); 
+      mcp3.pinMode(in, INPUT);
+      mcp3.pullUp(in, HIGH); 
       mcp4.pinMode(in, INPUT);
+      mcp4.pullUp(in, HIGH);
      }
- 
+    
 }
 
 void loop()
 {
-  
-    for (int t=0; t<15; t++){
-      touch_ch0[t]=mcp1.digitalRead(t);
-     }
-     for (int t=0; t<15; t++){
-      touch_ch1[t]=mcp2.digitalRead(t);
-     }
-     for (int t=0; t<15; t++){
-      touch_ch2[t]=mcp3.digitalRead(t);
-     }
-    for (int t=0; t<16; t++){
-      touch_ch3[t]=mcp4.digitalRead(t);
-     } 
-
-     for (int t=0; t<15; t++){
+     for (int t=0; t<Hexagons_channel_0; t++){
       touch[t]=mcp1.digitalRead(t);
      }
-     for (int t=0; t<15; t++){
+     for (int t=0; t<Hexagons_channel_1; t++){
       touch[t+Hexagons_channel_0]=mcp2.digitalRead(t);
      }
-     for (int t=0; t<15; t++){
+     for (int t=0; t<Hexagons_channel_2; t++){
       touch[t+Hexagons_channel_0+Hexagons_channel_1]=mcp3.digitalRead(t);
      }
-    for (int t=0; t<16; t++){
+    for (int t=0; t<Hexagons_channel_3; t++){
       touch[t+Hexagons_channel_0+Hexagons_channel_1+Hexagons_channel_2]=mcp4.digitalRead(t);
      } 
-  /*
-   * 
-   * 
-    #define Hexagons_channel_0  15
-    #define Hexagons_channel_1  15
-    #define Hexagons_channel_2  15
-    #define Hexagons_channel_3  16
 
-    
-      //for (int j=0; j<NUMPIXELS; j++){
-        //res[j] = digitalRead(touch[j]);
-        //Serial.println(res[j]);
-        if (mcp4.digitalRead(0)==HIGH){
-          for (int k=0; k<NUMPIXELS; k++) {
-          leds[k] = CRGB::White;
-          }
-        }
-        if (mcp4.digitalRead(0)==LOW){
-          for (int l=0; l<NUMPIXELS; l++) {
-          leds[l] = leds[l].fadeToBlackBy(8);
-          
-        }
-       }
-      FastLED.show();
-*/ 
-
-       Serial.println(touch_ch1[0]);
+  for (int i = 0; i < Hexagons; i++) {
+    if (touch[i] != TouchBtnPState[i]) {
+      if  ((millis() - lastDebounceTime[i]) > debounceDelay) {
+        lastDebounceTime[i] = millis();
+        TouchBtnPState[i] = touch[i];
+      }
+    }
+  }
        for (int j=0; j<=Hexagons-1; j++){
-        if (touch[j]==HIGH){
+        if ((TouchBtnPState[j]==HIGH)){
           for (int k=j*PixelPerHexagon; k<j*PixelPerHexagon+PixelPerHexagon; k++) {
-          leds[k] = CRGB::White;
-          }
-        }
-        if (touch[j]==LOW){
-          for (int l=j*PixelPerHexagon; l<j*PixelPerHexagon+PixelPerHexagon; l++) {
-          leds[l] = leds[l].fadeToBlackBy(16);
+          leds[k] = CRGB::White; //White
+          //leds[k] = FieldColors[random(0, NUM_COLORS)];
           }
         }
        }
 
+        for (int j=0; j<=Hexagons-1; j++){  
+           if (TouchBtnPState[j]==LOW){
+            //if  ((millis() - lastOffTime[j]) > OffDelay) {
+             for (int l=j*PixelPerHexagon; l<j*PixelPerHexagon+PixelPerHexagon; l++) {
+             leds[l] = leds[l].fadeToBlackBy(fadeAmt);
+             }
+             //lastOffTime[j] = millis();
+            //}
+          }
+        }
+        
+       
       FastLED.show();
      
 
       
     /*   
+        //Just for testing if all LEDs work
+        
         // This outer loop will go over each strip, one at a time
-  
+        
     // This inner loop will go over each led in the current strip, one at a time
     for(int i = 0; i < NUMPIXELS; i++) {
       leds[i] = CRGB::White;
