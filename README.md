@@ -21,3 +21,5 @@ https://youtu.be/I4rWym8PK4s
 
 Added a schematic wiring, just for understanding:
 [Wiring.pdf](https://github.com/mazls/hexagon-desk/files/8800328/Wiring.pdf)
+
+Everything is wired to the 4 data channels. Every Data-channel has one mcp23017 for the sensors. First 3 wired to 15 hexagons, last is wired to 16 hexagons.
