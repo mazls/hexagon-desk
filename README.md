@@ -17,3 +17,7 @@ I uploaded the demo program i used to check the feasibility, i soldered the leds
 
 
 https://youtu.be/I4rWym8PK4s
+
+
+Added a schematic wiring, just for understanding:
+[Wiring.pdf](https://github.com/mazls/hexagon-desk/files/8800328/Wiring.pdf)
