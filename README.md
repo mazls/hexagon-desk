@@ -10,8 +10,7 @@ The main-pcb has 4x MCP23017, 1x 1500uF Capacitor, 1x Fuse holder, 1x SN74HC125N
 
 Dev Kit link:
 https://www.az-delivery.de/en/products/esp32-developmentboard
-
-The programm is yet not finished. 
+ 
 
 I uploaded the demo program i used to check the feasibility, i soldered the leds and the touch sensors directly to the esp32.
 
