@@ -29,6 +29,11 @@
 <p align="justify"> 
   I saw a short TikTok with a led table that lights up when touched and immediately felt like building it myself. So i designed my own Main-PCB and little hexagonal PCBs for the light and touch. Unfortunately, there were a few setbacks due to the availability of some components. So I had to equip the main PCB with self soldered components. I also had to get the touch sensors externally and solder them on. If the whole thing with the chips calms down a bit I will tackle the whole thing again and simplify it.
 </p>
+<p align="center"> 
+  <img src="img/PXL_20220918_142039245.PORTRAIT.jpg" alt="HexagonDesk" height="682px" width="837">
+</p>
+
+
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
