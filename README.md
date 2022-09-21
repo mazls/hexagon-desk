@@ -39,6 +39,9 @@
   This project still requires a lot of manual work. The main board still has to be assembled by yourself, as well as the touch sensors on the Hexagon boards.
 Also a lot of wiring has to be done. The touch sensors are individually connected to the main board. The WS2812B on the hexagons are looped through per channel.
 </p>
+<p align="center"> 
+  <img src="img/PXL_20220917_151845995.JPG" alt="HexagonWiring" height="382px" width="637">
+</p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -91,7 +94,7 @@ Also a lot of wiring has to be done. The touch sensors are individually connecte
 
 <p>I have designed this PCB to integrate the LEDs and the Touch Sensor.</p>
 <p>The PCB has a "Data IN" and "Data OUT" so it is possible to connect multiple PCBs to act as a WS2812B Strip</p>
-<p>Every PCB has a Signal Pin which connects the Singal Output from the TTP223 PCB to the Main-PCB</p>
+<p>Every PCB has a "Signal" Pin which connects the signal output from the TTP223 PCB to the Main-PCB</p>
 <p>The Input Voltage is 5V for the PCB</p>
 
 <p align="center"> 
