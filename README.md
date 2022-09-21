@@ -105,13 +105,13 @@ Also a lot of wiring has to be done. The touch sensors are individually connecte
 
 <p>Schematic Wiring</p>
 [Wiring.pdf](https://github.com/mazls/hexagon-desk/files/8800328/Wiring.pdf)
-
+</p>
 <p>Print files can be found here:</p>
 https://www.printables.com/model/200964-hexagon-led-coffee-table
-
+</p>
 <p>Dev Kit link:</p>
 https://www.az-delivery.de/en/products/esp32-developmentboard
-
+</p>
 <p>Videos</p>
 https://youtu.be/I4rWym8PK4s
 
