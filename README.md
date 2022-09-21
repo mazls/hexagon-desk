@@ -61,7 +61,7 @@ Also a lot of wiring has to be done. The touch sensors are individually connecte
 <!-- GETTING STARTED -->
 <h2 id="getting-started"> :book: Getting Started</h2>
 <p>Install the RP2040 Board: https://github.com/earlephilhower/arduino-pico </p>
-<p>For ESP32 you have to install ESP32 Boars: https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/ </p>
+<p>For ESP32 you have to install ESP32 Boards: https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/ </p>
 
 <p>For RP2040 You have to clone the repo and copy the FastLED folder in your "...\Dokuments\Arduino\libraries\" folder to work with the RP2040</p>
 
