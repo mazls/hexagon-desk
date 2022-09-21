@@ -40,7 +40,7 @@
 Also a lot of wiring has to be done. The touch sensors are individually connected to the main board. The WS2812B on the hexagons are looped through per channel.
 </p>
 <p align="center"> 
-  <img src="img/PXL_20220917_151845995.JPG" alt="HexagonWiring" height="382px" width="637">
+  <img src="img/PXL_20220917_151845995.jpg" alt="HexagonWiring" height="382px" width="637">
 </p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
