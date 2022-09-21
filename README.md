@@ -101,6 +101,7 @@ Also a lot of wiring has to be done. The touch sensors are individually connecte
 <p>The PCB has a "Data IN" and "Data OUT" so it is possible to connect multiple PCBs to act as a WS2812B Strip</p>
 <p>Every PCB has a "Signal" Pin which connects the signal output from the TTP223 PCB to the Main-PCB</p>
 <p>The Input Voltage is 5V for the PCB</p>
+<p>I have scraped some varnish from the touch surface of the TTP223 sensors and soldered a cable there, which then functions as a touch sensor.</p>
 
 <p align="center"> 
   <img src="img/D56_2259.jpg" alt="HexagonPCB" height="282px" width="637">
