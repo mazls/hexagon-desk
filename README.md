@@ -108,6 +108,10 @@ Also a lot of wiring has to be done. The touch sensors are individually connecte
 </p>
 <p>Print files can be found here:</p>
 https://www.printables.com/model/200964-hexagon-led-coffee-table
+<p align="center"> 
+  <img src="img/D56_2187.jpg" alt="HexagonPrint" height="282px" width="637">
+</p>
+
 </p>
 <p>Dev Kit link:</p>
 https://www.az-delivery.de/en/products/esp32-developmentboard
