@@ -109,7 +109,7 @@ Also a lot of wiring has to be done. The touch sensors are individually connecte
 <p>Print files can be found here:</p>
 https://www.printables.com/model/200964-hexagon-led-coffee-table
 <p align="center"> 
-  <img src="img/D56_2187.jpg" alt="HexagonPrint" height="282px" width="637">
+  <img src="img/D56_2187.jpg" alt="HexagonPrint" height="382px" width="637">
 </p>
 
 </p>
