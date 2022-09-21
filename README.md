@@ -72,6 +72,7 @@ Also a lot of wiring has to be done. The touch sensors are individually connecte
 <pre><code>#define Hexagons_channel_2  12</code></pre>
 <pre><code>#define Hexagons_channel_3  14</code></pre>
 <p>In this config i have connectet 12 Hexagon PCBs to channel 0, 12 Hexagon PCBs to channel 1, 12 Hexagon PCBs to channel 2 and 14 Hexagon PCBs to channel 3. The desk was build with 50 Hexagon PCBs. The maximum is 64, but this can be expanded with more MCP23017.
+</p>
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <!-- Main-PCB -->
@@ -99,7 +100,7 @@ Also a lot of wiring has to be done. The touch sensors are individually connecte
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <!-- Links -->
-<h2 id="Links"> :small_orange_diamond: Some useful Links: </h2>
+<h2 id="Links"> :scroll: Some useful Links: </h2>
 
 <p>Schematic Wiring</p>
 [Wiring.pdf](https://github.com/mazls/hexagon-desk/files/8800328/Wiring.pdf)
