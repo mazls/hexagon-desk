@@ -115,11 +115,16 @@ Also a lot of wiring has to be done. The touch sensors are individually connecte
 <p>Schematic Wiring</p>
 [Wiring.pdf](https://github.com/mazls/hexagon-desk/files/8800328/Wiring.pdf)
 </p>
+<p>Desk Cutout for 50 Hexagons</p>
+[Hex_Desk_Ausschnitt.pdf](https://github.com/mazls/hexagon-desk/blob/main/Hex_Desk_Ausschnitt.pdf)
+</p>
+
 <p>Print files can be found here:</p>
 https://www.printables.com/model/200964-hexagon-led-coffee-table
 <p align="center"> 
   <img src="img/D56_2187.jpg" alt="HexagonPrint" height="382px" width="637">
 </p>
+
 
 </p>
 <p>Dev Kit link:</p>
