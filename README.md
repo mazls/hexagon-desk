@@ -1,6 +1,5 @@
 <h1 align="center"> Hexagon Desk </h1>
 <h3 align="center"> Epoxy Coffe Table </h3>
-Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
@@ -155,9 +154,13 @@ https://www.youtube.com/watch?v=-OrUfqWGYhM&feature=emb_title
 <h2 id="Sponsor"> ➤ Sponsor: </h2>
 PCBway kindly sponsored a batch of PCBs which you can see pictures of inside the _img folder.
 The pcbs came in an absolutely outstanding quality and also very fast!
-Ordering at PCBWay is simple:
+<p>Ordering at PCBWay is simple:</p>
 Upload the files from the desired folder
 After submitting your file, a PCBWay engineer will spend a few minutes reviewing your file to make sure everything goes smoothly for production. For high-priority work, it's always good to see how things are progressing. You have the opportunity to check the production status of each step. For assembled PCB, PCBWay will also send you sample photos for preview and confirmation.
-![pcbway logo](_img/PCBwaylogo.png)
+
+<p align="center"> 
+  <img src="img/PCBwaylogo.png" alt="PCBwaylogo.png" height="282px" width="637">
+</p>
+
 http://pcbway.com
 
