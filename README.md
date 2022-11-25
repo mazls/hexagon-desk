@@ -1,6 +1,5 @@
 <h1 align="center"> Hexagon Desk </h1>
 <h3 align="center"> Epoxy Coffe Table </h3>
-Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
