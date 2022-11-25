@@ -1,6 +1,15 @@
 <h1 align="center"> Hexagon Desk </h1>
 <h3 align="center"> Epoxy Coffe Table </h3>
+Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 <p align="center"> 
   <img src="img/HexagonDesk.gif" alt="Hexagon Desk" height="282px" width="637">
 </p>
@@ -18,6 +27,7 @@
     <li><a href="#PCB"> ➤ PCB: Main-PCB </a></li>
 	<li><a href="#HexagonPCB"> ➤ PCB: HexagonPCB </a></li>
 	<li><a href="#Links"> ➤ Useful Links: </a></li>
+	<li><a href="#Sponsor"> ➤ Sponsor: </a></li>
   </ol>
 </details>
 
@@ -43,6 +53,9 @@
 <p align="justify"> 
   This project still requires a lot of manual work. The main board still has to be assembled by yourself, as well as the touch sensors on the Hexagon boards.
 Also a lot of wiring has to be done. The touch sensors are individually connected to the main board. The WS2812B on the hexagons are looped through per channel.
+
+I have created a bom and instructions. however, these are still far from good. I am always working on improving these and also on the programme/boards.
+I have opened the discussions area for questions, suggestions etc.
 </p>
 <p align="center"> 
   <img src="img/PXL_20220917_151845995.jpg" alt="HexagonWiring" height="682px" width="837">
@@ -136,4 +149,15 @@ https://youtu.be/I4rWym8PK4s
 https://www.youtube.com/watch?v=-OrUfqWGYhM&feature=emb_title
 
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<!-- Sponsor -->
+<h2 id="Sponsor"> ➤ Sponsor: </h2>
+PCBway kindly sponsored a batch of PCBs which you can see pictures of inside the _img folder.
+The pcbs came in an absolutely outstanding quality and also very fast!
+Ordering at PCBWay is simple:
+Upload the files from the desired folder
+After submitting your file, a PCBWay engineer will spend a few minutes reviewing your file to make sure everything goes smoothly for production. For high-priority work, it's always good to see how things are progressing. You have the opportunity to check the production status of each step. For assembled PCB, PCBWay will also send you sample photos for preview and confirmation.
+![pcbway logo](_img/PCBwaylogo.png)
+http://pcbway.com
 

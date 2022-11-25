@@ -1,5 +1,0 @@
-Comment,Designator,Footprint,LCSC
-Conn_01x04_Male,J1,PinHeader_1x04_P2.54mm_Vertical,C124378
-0.1uF,"C1,C2,C3,C4,C5,C6",C_0201_0603Metric,C141382
-WS2812B,"D1,D2,D3,D4,D5,D6",LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm,C2761795
-Conn_01x03_Male,"J2,J3",PinHeader_1x03_P2.54mm_Vertical,C2894926
