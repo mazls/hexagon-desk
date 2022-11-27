@@ -124,11 +124,18 @@ I have opened the discussions area for questions, suggestions etc.
 <!-- Links -->
 <h2 id="Links"> :scroll: Some useful Links: </h2>
 
+<p>BOM</p>
+[Tisch_BOM.xlsx](https://github.com/mazls/hexagon-desk/blob/main/BOM/Tisch_BOM.xlsx)
+</p>
+
 <p>Schematic Wiring</p>
 [Wiring.pdf](https://github.com/mazls/hexagon-desk/files/8800328/Wiring.pdf)
 </p>
 <p>Desk Cutout for 50 Hexagons</p>
-[Hex_Desk_Ausschnitt.pdf](https://github.com/mazls/hexagon-desk/blob/main/Hex_Desk_Ausschnitt.pdf)
+[Hex_Desk_Ausschnitt.pdf](https://github.com/mazls/hexagon-desk/blob/main/Woodwork/Hex_Desk_Ausschnitt.pdf)
+</p>
+<p>Desk Legs</p>
+[Table_legs.pdf](https://github.com/mazls/hexagon-desk/blob/main/Woodwork/Table_legs.pdf)
 </p>
 
 <p>Print files can be found here:</p>
