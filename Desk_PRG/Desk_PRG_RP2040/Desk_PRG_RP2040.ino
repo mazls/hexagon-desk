@@ -40,8 +40,6 @@
 #define debug               0       //Activates a point runnning along the LEDS; to check PCB Wiring for LEDS
 
 
-
-
 const byte fadeAmt = 2;
 
 /*
@@ -58,8 +56,8 @@ static const CRGB FieldColors [NUM_COLORS] =
     CRGB::Indigo,
 };
 
-*/
-/*
+
+
 
 */
 Adafruit_MCP23017 mcp1;
@@ -157,7 +155,8 @@ void loop()
         if ((TouchBtnPState[j]==HIGH)){
           for (int k=j*PixelPerHexagon; k<j*PixelPerHexagon+PixelPerHexagon; k++) {
           leds[k] = CRGB::White; //White
-          //leds[k] = FieldColors[random(0, NUM_COLORS)];
+            //leds[k] = FieldColors[random(0, NUM_COLORS)];
+
           }
         }
        }
